@@ -1,0 +1,4 @@
+---
+applications:
+ - name: AngularTemplate-Backend
+   random-route: false

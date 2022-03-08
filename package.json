@@ -1,0 +1,28 @@
+{
+  "name": "itau-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "./node_modules/.bin/mocha --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cfenv": "^1.0.4",
+    "chai": "^4.1.2",
+    "cors": "^2.8.5",
+    "express": "^4.16.3",
+    "ibm-watson": "^5.5.0",
+    "mocha": "^5.2.0",
+    "request": "^2.88.2",
+    "twit": "^2.2.11",
+    "twitter": "^1.7.1",
+    "watson-developer-cloud": "^4.0.1"
+  }
+}

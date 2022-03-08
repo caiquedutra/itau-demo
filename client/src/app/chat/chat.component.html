@@ -1,0 +1,36 @@
+<div class="chatComponents__main">
+  <div class="chatComponents">
+
+    <div class="chatHeader">
+      <p>Itaú renegociação crédito imobiliário</p>
+      <img class="chatLogo"
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Banco_Ita%C3%BA_logo.svg/1200px-Banco_Ita%C3%BA_logo.svg.png"
+        alt="">
+    </div>
+
+    <div class="messageBody" id="scrollMe">
+      <div class="parentScroll">
+        <div *ngFor="let message of arrayChat">
+          <div [ngClass]="message.sentBy === 'bot'? 'balloon bot': 'balloon user'">
+            <div *ngIf="message.sentBy === 'user'" class="message">
+              <span>
+                {{message.text}}
+              </span>
+            </div>
+            <div *ngIf="message.sentBy === 'bot'" class="message">
+              <span [innerHTML]="message.text"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottomChat">
+      <input class="inputMessage" type="text" (keyup.enter)="onSubmit()" type="text" [(ngModel)]='textUser'
+        placeholder="Digite aqui sua mensagem">
+      <button type="submit" (click)="onSubmit()" class="sendButton">
+        <span>Enviar</span> </button>
+    </div>
+
+  </div>
+</div>

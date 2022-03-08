@@ -1,0 +1,244 @@
+@import url('https://fonts.google.com/specimen/IBM+Plex+Mono');
+
+.chatComponents__main{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+}
+.chatComponents {
+    // position: absolute;
+    // right: 650px;
+    width: 370px;
+    height: 100%;
+    z-index: 10;
+    border-radius: 20px 0px 0px 20px;
+    box-shadow: 2px 8px 5px 8px rgba(0, 0, 0, .2);
+    bottom: 0 !important;
+
+    .chatHeader {
+        border-radius: 9px 9px 0px 0px;
+        display: flex;
+        background-color: #ec7000;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 15px 5px 15px;
+        height: 10%;
+        color: white;
+
+
+        .chatLogo {
+            width: 55px;
+            height: 48px;
+            background-repeat: no-repeat;
+            background-size: 100%;
+            // margin: 7px;
+        }
+    }
+
+    .bottomChat {
+        height: 5%;
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+        // border-radius: 0px 0px 9px 9px;
+        bottom: 0;
+
+        .inputMessage {
+            // justify-content: space-around;
+            width: 90%;
+            // border: 1px solid #B2BDC6;
+            // background-color: #fff;
+            // border-radius: 6px;
+            height: 100%;
+            padding: 5px;
+            bottom: 0;
+            font-size: .8rem;
+        }
+
+        .sendButton {
+            border: none;
+            color: #fff;
+            width: 25%;
+            height: 100%;
+            cursor: pointer;
+            background-color: #EC7000;
+
+            &:focus {
+                outline: transparent;
+            }
+
+            span {
+                color: #fff;
+                font-size: 15px;
+                font-weight: 700;
+            }
+        }
+
+        input {
+            width: 70%;
+            border: none;
+            border-bottom: 1px solid #B2BDC6;
+            padding: 5px;
+            margin-bottom: 0px;
+
+            &:focus {
+                outline: transparent;
+            }
+        }
+    }
+
+    .messageBody {
+        height: 85%;
+        overflow-y: auto;
+        // overflow-x: hidden;
+        background-color: #F1ECE9 ;
+
+        bottom: 0px;
+        padding-left: 10px;
+        .parentScroll {
+            width: 95%;
+            padding: 10px;
+            padding-right: 0;
+          
+
+            >div {
+                &:last-of-type {
+                    margin-bottom: 350px;
+                }
+            }
+        }
+    }
+
+    .button-list {
+        display: flex;
+        width: 91%;
+        padding-left: 35px;
+        padding-right: 10px;
+        flex-wrap: wrap;
+
+        button {
+            height: 32px;
+            // background-color: #fff;
+            border: 2px solid #414141;
+            color: #414141;
+            font-size: 14px;
+            border-radius: 10px;
+            margin-right: 2px;
+            margin-bottom: 10px;
+            font-family: 'Montserrat', sans-serif;
+
+            &:last-of-type {
+                margin-right: 0;
+            }
+        }
+    }
+
+    .boxTyping {
+        display: flex;
+        width: 100%;
+
+        .message {
+            background-color: #1E90FF;
+            margin: 10px 10px 10px 1px;
+            border-radius: 1px 10px 10px 10px;
+
+            .progress span {
+                transition: all 500ms ease;
+                background: #0277bd;
+                margin-right: 2px;
+                height: 10px;
+                width: 10px;
+                display: inline-block;
+                border-radius: 10px;
+                animation: wave 1s ease infinite;
+
+                &:nth-child(1) {
+                    animation-delay: 0;
+                }
+
+                &:nth-child(2) {
+                    animation-delay: 100ms;
+                }
+
+                &:nth-child(3) {
+                    animation-delay: 200ms;
+                }
+            }
+        }
+    }
+
+    @keyframes wave {
+
+        0%,
+        40%,
+        100% {
+            transform: translate(0, 0);
+        }
+
+        10% {
+            transform: translate(0, -10px);
+        }
+    }
+
+    .logoMessage {
+        // background-image: url("../../assets/images/100-pan-logo.png");
+        background-repeat: no-repeat;
+        background-size: 100%;
+        height: 50px;
+        width: 35px;
+    }
+
+    .balloon {
+        display: flex;
+        width: 100%;
+    }
+
+    .message {
+        font-size: 12px;
+        max-width: 240px;
+        padding: 10px;
+        box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.15);
+        line-height: 17px;
+        bottom: 0px;
+
+        span {
+            overflow-wrap: break-word;
+            width: 100%;
+            display: block;
+            position: initial;
+            color: #FFFF;
+            font-size: .9rem;
+        }
+    }
+
+    .balloon.user {
+        .message {
+            background-color: #196BB0;
+            margin: 0px;
+            color: #fff;
+            border-radius: 10px 1px 10px 10px;
+            margin-left: auto;
+            
+        }
+    }
+
+    .balloon.bot {
+        display: flex;
+        flex-direction: row;
+
+        .message {
+            display: flex;
+            background-color:  #FFFF;
+            margin: 10px 10px 10px 1px;
+            border-radius: 1px 10px 10px 10px;
+            margin-right: auto;
+            border: transparent;
+
+            span {
+                color: #322E2B;
+                font-size: .9rem;
+            }
+        }
+    }
+}
